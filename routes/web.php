@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('applestore');
-});
+// Route::get('/', function () {
+//     return view('applestore','ProductController@index');
+// });
+
+Route::get('/','App\Http\Controllers\ProductController@index');
