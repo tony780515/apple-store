@@ -14,13 +14,13 @@
                 src="https://www.apple.com/v/home/z/images/heroes/imac/hero_imac__dqh65mwjj04m_largetall.jpg"
                 alt=""></div>
         <div class="group-photo">
-            @foreach ($products as $product)
+            @foreach ($macs as $mac)
             <div class="box">
                 <div class="photo"><a href=""><img
-                            src="{{$product->img}}"
+                            src="{{$mac->img}}"
                             alt=""></a></div>
                 <div class="text"><a href="">
-                        <h3>{{$product->name}}</h3><h4>NT$ {{$product->price}}</h4>
+                        <h3>{{$mac->name}}</h3><h4>NT$ {{$mac->price}}</h4>
                     </a></div>
                 <div class="link">
                     <div class="link-text"><a href="">加入購物車</a> </div>
@@ -72,19 +72,21 @@
                 alt="">
         </div>
         <div class="group-photo">
+            @foreach ($ipads as $ipad)
             <div class="box">
                 <div class="photo"><a href=""><img
-                            src="https://d2lfcsub12kx0l.cloudfront.net/tw/article/img/202106/202106020555029382_ExtraLargeSize-640x640.jpg"
+                            src="{{$ipad->img}}"
                             alt=""></a></div>
                 <div class="text"><a href="">
-                        <h3>iPad Pro</h3>
+                        <h3>{{$ipad->name}}</h3><h4>NT$ {{$ipad->price}}</h4>
                     </a></div>
                 <div class="link">
                     <div class="link-text"><a href="">加入購物車</a> </div>
                     <div class="link-icon"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
-            <div class="box">
+            @endforeach
+            {{-- <div class="box">
                 <div class="photo"><a href=""><img
                             src="https://s.yimg.com/zp/MerchandiseImages/bb2fdfc50a-Gd-9238370.jpg"
                             alt=""></a></div>
@@ -120,7 +122,7 @@
                     <div class="link-text"><a href="">加入購物車</a> </div>
                     <div class="link-icon"><i class="fas fa-angle-right"></i></div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div id="c3" class="content">
@@ -129,19 +131,21 @@
                 alt="">
         </div>
         <div class="group-photo">
+            @foreach ($iphones as $iphone)
             <div class="box">
                 <div class="photo"><a href=""><img
-                            src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-max-family-hero-all?wid=940&hei=1112&fmt=jpeg&qlt=80&.v=1604021663000"
+                            src="{{$iphone->img}}"
                             alt=""></a></div>
                 <div class="text"><a href="">
-                        <h3>iPhone 12 Pro</h3>
+                        <h3>{{$iphone->name}}</h3><h4>NT$ {{$iphone->price}}</h4>
                     </a></div>
                 <div class="link">
                     <div class="link-text"><a href="">加入購物車</a> </div>
                     <div class="link-icon"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
-            <div class="box">
+            @endforeach
+            {{-- <div class="box">
                 <div class="photo"><a href=""><img
                             src="https://s.yimg.com/zp/MerchandiseImages/3279D4BDC1-SP-9795825.jpg"
                             alt=""></a></div>
@@ -177,7 +181,7 @@
                     <div class="link-text"><a href="">加入購物車</a> </div>
                     <div class="link-icon"><i class="fas fa-angle-right"></i></div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <div id="c4" class="content">
@@ -186,19 +190,21 @@
                 alt="">
         </div>
         <div class="group-photo">
+            @foreach ($watchs as $watch)
             <div class="box">
                 <div class="photo"><a href=""><img
-                            src="https://www.apple.com/tw/watch/shared/images/overview/compare_s6__evsi0wlzp4ya_large.jpg"
+                            src="{{$watch->img}}"
                             alt=""></a></div>
                 <div class="text"><a href="">
-                        <h3>Apple Watch Series 6</h3>
+                        <h3>{{$watch->name}}</h3><h4>NT$ {{$watch->price}}</h4>
                     </a></div>
                 <div class="link">
                     <div class="link-text"><a href="">加入購物車</a> </div>
                     <div class="link-icon"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
-            <div class="box">
+            @endforeach
+            {{-- <div class="box">
                 <div class="photo"><a href=""><img
                             src="https://www.apple.com/v/watch/shared/compare/e/images/overview/compare_se__crebhd9hhdea_large.jpg"
                             alt=""></a></div>
@@ -235,7 +241,7 @@
                     <div class="link-text"><a href="">加入購物車</a> </div>
                     <div class="link-icon"><i class="fas fa-angle-right"></i></div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 <div class="backtotop"><a href="#"><img src="https://icon-library.com/images/back-to-top-icon-png/back-to-top-icon-png-8.jpg" alt=""></a></div>

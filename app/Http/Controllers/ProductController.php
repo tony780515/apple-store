@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,12 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::get();
-        return view('applestore',compact('products'));
+        $macs = $products->where('category_id', 1 );
+        $ipads = $products->where('category_id', 2 );
+        $iphones = $products->where('category_id', 3 );
+        $watchs = $products->where('category_id', 4 );
+
+        return view('applestore',compact('macs', 'ipads', 'iphones', 'watchs'));
     }
 
     /**
