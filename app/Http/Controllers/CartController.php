@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -12,9 +13,13 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $carts = Cart::with('products')->get();
+        $quantity = $request->get('quantity'.null);
+
+
+        return view('shoppingcart', compact('carts', 'quantity'));
     }
 
     /**
@@ -33,9 +38,16 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $cart = Product::find($id);
+
+        Cart::create(array(
+            'product_id' => $cart->id,
+            'quantity' => 1
+            ));
+
+        return redirect('/shoppingcart');
     }
 
     /**
@@ -78,8 +90,10 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function destroy($id)
     {
-        //
+        $cart = Cart::find($id);
+        $cart ->delete();
+        return redirect('/shoppingcart');
     }
 }

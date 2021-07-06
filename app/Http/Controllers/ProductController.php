@@ -16,10 +16,25 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::get();
-        $macs = $products->where('category_id', 1 );
-        $ipads = $products->where('category_id', 2 );
-        $iphones = $products->where('category_id', 3 );
-        $watchs = $products->where('category_id', 4 );
+
+        $macs = Product::whereHas('category', function($q){
+            $q->where('code','mac');
+        })->get();
+
+        $ipads = Product::whereHas('category', function($q){
+            $q->where('code','ipad');
+        })->get();
+
+        $iphones = Product::whereHas('category', function($q){
+            $q->where('code','iphone');
+        })->get();
+
+        $watchs = Product::whereHas('category', function($q){
+            $q->where('code','watch');
+        })->get();
+        // $ipads = $products->where('category_id', 2 );
+        // $iphones = $products->where('category_id', 3 );
+        // $watchs = $products->where('category_id', 4 );
 
         return view('applestore',compact('macs', 'ipads', 'iphones', 'watchs'));
     }
