@@ -27,7 +27,7 @@ class ProductSeeder extends Seeder
                 'category_id' => self::CATEGORY_MAC,
                 'name' => 'MacBook',
                 'price' => 30900,
-                'quantity' => 15,
+                'quantity' => 0,
                 'img' => 'https://img.ltn.com.tw/Upload/3c/page/2021/04/26/210426-44119-1.jpg'
             ],
             [
@@ -62,7 +62,7 @@ class ProductSeeder extends Seeder
                 'category_id' => self::CATEGORY_IPAD,
                 'name' => 'iPad Air',
                 'price' => 18900,
-                'quantity' => 13,
+                'quantity' => 0,
                 'img' => 'https://s.yimg.com/zp/MerchandiseImages/bb2fdfc50a-Gd-9238370.jpg'
             ],
             [
@@ -104,7 +104,7 @@ class ProductSeeder extends Seeder
                 'category_id' => self::CATEGORY_IPHONE,
                 'name' => 'iPhone 11',
                 'price' => 19900,
-                'quantity' => 16,
+                'quantity' => 0,
                 'img' => 'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-select-2019-family?wid=882&hei=1058&fmt=jpeg&qlt=80&.v=1567022175704'
             ],
             [

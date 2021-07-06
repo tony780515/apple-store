@@ -13,7 +13,7 @@ class Category extends Model
     public function products()
     {
         //return $this->hasMany('App\要連結的model名稱','外鍵','主鍵')
-        return $this->hasMany('App\Product','category_id','id');
+        return $this->hasMany('App\Models\Product','category_id','id');
     }
 
 }

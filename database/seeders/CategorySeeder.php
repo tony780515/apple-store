@@ -17,7 +17,7 @@ class CategorySeeder extends Seeder
         Category::insert([
             [
                 'name' => 'Mac',
-                'code' => 'Mac',
+                'code' => 'mac',
             ],
             [
                 'name' => 'iPad',
@@ -29,7 +29,7 @@ class CategorySeeder extends Seeder
             ],
             [
                 'name' => 'Watch',
-                'code' => 'Watch',
+                'code' => 'watch',
             ]
 
         ]);
