@@ -138,21 +138,29 @@
 <body>
     <nav>
         <div class="navbar">
-            <div class="logo"><img
-                    src="http://4.bp.blogspot.com/-uKViBqvNSZU/Ve4gpgCrmTI/AAAAAAAAaAI/JAkVTADYdDo/s1600/Apple_Computer_Logo_rainbow.svg.png"
-                    alt=""></div>
+            <div class="logo">
+                <a href="/">
+                    <img src="http://4.bp.blogspot.com/-uKViBqvNSZU/Ve4gpgCrmTI/AAAAAAAAaAI/JAkVTADYdDo/s1600/Apple_Computer_Logo_rainbow.svg.png" alt="">
+                </a>
+            </div>
             <div class="navbar-left">
-                <a href="#c1">Mac</a>
-                <a href="#c2">iPad</a>
-                <a href="#c3">iPhone</a>
-                <a href="#c4">Watch</a>
+                <a href="/#c1">Mac</a>
+                <a href="/#c2">iPad</a>
+                <a href="/#c3">iPhone</a>
+                <a href="/#c4">Watch</a>
             </div>
             <div class="navbar-right">
                 <form class="search" action="">
                     <input type="search">
                     <button><i class="fas fa-search"></i></button>
                 </form>
-                <div class="icon"><a href=""><i class="fas fa-shopping-cart"></i></a></div>
+                <div class="icon">
+                    <a href="/shoppingcart">
+                        <i class="fas fa-shopping-cart">
+                            <div class="item-count">8</div>
+                        </i>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -163,7 +171,7 @@
         <h5>Copyright © 2021 Apple Inc. 保留一切權利。</h5>
     </footer>
 
-    @yield('js')
+    <script src="{{mix('js/app.js')}}" type="text/javascript"></script>
 </body>
 
 </html>

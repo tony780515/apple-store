@@ -1,0 +1,164 @@
+main {
+    width: 100%;
+    padding: 10px;
+    height: auto;
+}
+
+.cart_title{
+    width: 70%;
+    margin: auto;
+    margin-top: 110px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.cart {
+    width: 70%;
+    margin:20px auto;
+    border: gainsboro solid 2px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+
+.item {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: gainsboro solid 1px;
+    position: relative;
+}
+
+/* .cart input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+} */
+
+.cart .photo {
+    width: 20%;
+    margin-left: 20px;
+    /* margin: 20px 0; */
+}
+
+.cart .photo img {
+    width: 100%;
+    height: 130px;
+    object-fit: contain;
+}
+
+.cart .iteminfo {
+    font-size: 15px;
+    line-height: 25px;
+    margin-left: 50px;
+}
+
+.cart .item_quantity {
+    position: absolute;
+    right: 200px;
+}
+
+.cart .item_total {
+    position: absolute;
+    right: 100px;
+}
+
+.cart .delete button{
+    position: absolute;
+    border: none;
+    background-color: white;
+    right: 0px;
+    bottom: 75px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+.cart .account {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    margin-left: auto;
+    text-align: center;
+}
+
+.account .total_red {
+    color: red;
+}
+
+.customer_title {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.customer_data {
+    width: 70%;
+    margin:20px auto;
+    border: gainsboro solid 2px;
+    border-radius: 5px;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.customer_data .customer_name,.email,.address,.phone {
+    width: 45%;
+    margin: 20px;
+    padding: 0;
+}
+
+.customer_data input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+    background-color: rgba(220, 220, 220, 0.63);
+}
+
+.customer_data .backtoshop {
+    cursor: pointer;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+    min-width: 28px;
+    padding: 8px 40px;
+    margin-top: 30px;
+    border: grey 1px solid;
+    border-radius: 5px;
+    background: rgba(220, 220, 220, 0.63);
+}
+
+.customer_data .backtoshop:hover {
+    opacity: 0.8;
+}
+
+.customer_data .pay button {
+    cursor: pointer;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+    min-width: 28px;
+    padding: 8px 60px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    background: #0071e3;
+    color: #fff;
+}
+
+.customer_data .pay button:hover {
+    background-color: #0076edec;
+}
+
