@@ -14,5 +14,12 @@ class Cart extends Model
     {
         //return $this->hasMany('App\要連結的model名稱','外鍵','主鍵')
         return $this->hasOne('App\Models\Product', 'id', 'product_id');
+
+    }
+
+    public function order()
+    {
+
+        return $this->belongsToMany('App\Models\Order', 'product_orders', 'product_id', 'order_id');
     }
 }

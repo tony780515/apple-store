@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\FuncCall;
 
 class CartController extends Controller
 {
@@ -15,11 +16,13 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {
+
+
         $carts = Cart::with('products')->get();
-        $quantity = $request->get('quantity'.null);
+        $total_quantity = $carts->where('ip', $request->ip())->sum('quantity');
 
 
-        return view('shoppingcart', compact('carts', 'quantity'));
+        return view('shoppingcart', compact('carts', 'total_quantity'));
     }
 
     /**
@@ -40,49 +43,63 @@ class CartController extends Controller
      */
     public function store(Request $request, $id)
     {
-        $cart = Product::find($id);
+        $product = Product::find($id);
 
-        Cart::create(array(
-            'product_id' => $cart->id,
-            'quantity' => 1
-            ));
+        $cart = Cart::where('ip', $request->ip())
+        ->where('product_id', $product->id)
+        ->first();
+
+        // $cart->quantity->validate(
+        //     [
+        //         'quantity' => 'integer|max:{{$product->quantity}}'
+        //     ]
+        // );
+
+
+        if($cart){
+                $cart->quantity =  $cart->quantity + 1;
+                $cart->save();
+
+        }else{
+            Cart::create(array(
+                'ip' => $request->ip(),
+                'product_id' => $product->id,
+                'quantity' => 1
+                ));
+        }
+
 
         return redirect('/shoppingcart');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Cart $cart)
+    public function add(Request $request, $id)
     {
-        //
+        $cart = Cart::where('ip', $request->ip())
+        ->where('product_id',$id)->first();
+
+        $cart->quantity =  $cart->quantity + 1;
+        $cart->save();
+
+        return redirect('/shoppingcart');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Cart $cart)
+    public function minus(Request $request, $id)
     {
-        //
+        $cart = Cart::where('ip', $request->ip())
+        ->where('product_id',$id)->first();
+
+        if($cart->quantity >1){
+            $cart->quantity =  $cart->quantity - 1;
+            $cart->save();
+        }else{
+            $cart ->delete();
+        }
+
+        return redirect('/shoppingcart');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Cart $cart)
-    {
-        //
-    }
+
+
 
     /**
      * Remove the specified resource from storage.
