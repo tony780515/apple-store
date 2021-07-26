@@ -17,4 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
     ])
     .postCss('resources/css/applestore.css', 'public/css')
     .postCss('resources/css/template.css', 'public/css')
-    .postCss('resources/css/shoppingcart.css', 'public/css');
+    .postCss('resources/css/shoppingcart.css', 'public/css')
+    .postCss('resources/css/orderlist.css', 'public/css');

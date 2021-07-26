@@ -60,6 +60,14 @@ main {
     right: 200px;
 }
 
+.cart .item_quantity form {
+    display: inline;
+}
+
+.cart .item_quantity button {
+    margin: 0 5px;
+}
+
 .cart .item_total {
     position: absolute;
     right: 100px;

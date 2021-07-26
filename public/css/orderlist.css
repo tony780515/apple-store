@@ -1,0 +1,142 @@
+main {
+    width: 100%;
+    padding: 10px;
+}
+
+.success {
+    width: 70%;
+    margin: auto;
+    margin-top: 170px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: gainsboro solid 1px;
+}
+
+.success img {
+    width: 15%;
+}
+
+.success .text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.cart {
+    width: 70%;
+    margin: 20px auto;
+    border: gainsboro solid 2px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+
+.item {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: gainsboro solid 1px;
+    position: relative;
+}
+
+/* .cart input[type="checkbox"] {
+width: 18px;
+height: 18px;
+} */
+
+.cart .photo {
+    width: 20%;
+    margin-left: 20px;
+    /* margin: 20px 0; */
+}
+
+.cart .photo img {
+    width: 100%;
+    height: 130px;
+    -o-object-fit: contain;
+       object-fit: contain;
+}
+
+.cart .iteminfo {
+    font-size: 15px;
+    line-height: 25px;
+    margin-left: 50px;
+}
+
+.cart .item_quantity {
+    position: absolute;
+    right: 200px;
+}
+
+.cart .item_quantity form {
+    display: inline;
+}
+
+.cart .item_quantity button {
+    margin: 0 5px;
+}
+
+.cart .item_total {
+    position: absolute;
+    right: 100px;
+}
+
+.cart .delete button {
+    position: absolute;
+    border: none;
+    background-color: white;
+    right: 0px;
+    bottom: 75px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+.cart .account {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    margin-left: auto;
+    text-align: center;
+}
+
+.account .total_red {
+    color: red;
+}
+
+.order_title {
+    width: 70%;
+    margin: auto;
+    margin-top: 70px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.order {
+    width: 40%;
+    margin: 20px auto;
+    border: gainsboro solid 2px;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+
+.order table {
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.order th,
+td {
+    padding: 35px 0px 0px 5px;
+    font-size: 17px;
+}
+
+.order td {
+    border-bottom: gainsboro solid 1px;
+}
+
