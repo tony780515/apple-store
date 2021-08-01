@@ -157,7 +157,9 @@
                 <div class="icon">
                     <a href="/shoppingcart">
                         <i class="fas fa-shopping-cart">
-                            <div class="item-count">8</div>
+                            @if($count)
+                              <div class="item-count">{{$count}}</div>
+                            @endif
                         </i>
                     </a>
                 </div>

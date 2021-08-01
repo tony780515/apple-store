@@ -19,10 +19,23 @@ class CartController extends Controller
 
 
         $carts = Cart::with('products')->get();
-        $total_quantity = $carts->where('ip', $request->ip())->sum('quantity');
+        $usercart = $carts->where('ip', $request->ip());
+        $total_quantity = $usercart->sum('quantity');
+        
+
+        // 方法1:
+        // $total_price = 0;
+        // foreach($usercart as $cart){
+        //     $total_price = $total_price + ($cart->products->price * $cart->quantity);
+        // }
+
+        // 方法2:
+        $total_price = $usercart->sum(function ($cart) {
+            return $cart->products->price * $cart->quantity;
+        });
 
 
-        return view('shoppingcart', compact('carts', 'total_quantity'));
+        return view('shoppingcart', compact('carts', 'total_quantity', 'total_price'));
     }
 
     /**
@@ -49,12 +62,6 @@ class CartController extends Controller
         ->where('product_id', $product->id)
         ->first();
 
-        // $cart->quantity->validate(
-        //     [
-        //         'quantity' => 'integer|max:{{$product->quantity}}'
-        //     ]
-        // );
-
 
         if($cart){
                 $cart->quantity =  $cart->quantity + 1;
@@ -77,8 +84,11 @@ class CartController extends Controller
         $cart = Cart::where('ip', $request->ip())
         ->where('product_id',$id)->first();
 
-        $cart->quantity =  $cart->quantity + 1;
-        $cart->save();
+        if($cart->quantity < $cart->products->quantity){
+            $cart->quantity =  $cart->quantity + 1;
+            $cart->save();
+        }
+
 
         return redirect('/shoppingcart');
     }
@@ -88,11 +98,13 @@ class CartController extends Controller
         $cart = Cart::where('ip', $request->ip())
         ->where('product_id',$id)->first();
 
-        if($cart->quantity >1){
-            $cart->quantity =  $cart->quantity - 1;
-            $cart->save();
-        }else{
-            $cart ->delete();
+        if($cart){
+            if($cart->quantity >1){
+                $cart->quantity =  $cart->quantity - 1;
+                $cart->save();
+            }else{
+                $cart ->delete();
+            }
         }
 
         return redirect('/shoppingcart');
