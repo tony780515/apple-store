@@ -29,11 +29,13 @@
                     <div class="item_price">單價: NT$ {{$cart->products->price}}</div>
                 </div>
                 <div class="item_quantity">數量
+                    @if ($cart->products->quantity > $cart->quantity)
                     <form action="/shoppingcart/add/{{$cart->products->id}}">
                         <button>+</button>
                     </form>
+                    @endif
                     {{-- <input type="text" min="1" max="{{$cart->products->quantity}}" value="{{$cart->quantity}}"> --}}
-                    <span name="quantity">{{$cart->quantity}}</span>
+                    <span>{{$cart->quantity}}</span>
                     <form action="/shoppingcart/minus/{{$cart->products->id}}">
                         <button>-</button>
                     </form>
@@ -50,7 +52,7 @@
             @endforeach
         <div class="account">
             <div class="order_quantity">共 <span class="total_red">{{$total_quantity}}</span> 件產品</div>
-            <div class="order_total">總金額:<span class="total_red">NT$ 39900</span></div>
+            <div class="order_total">總金額:<span class="total_red">NT${{$total_price}}</span></div>
         </div>
         @endif
     </div>
