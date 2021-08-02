@@ -17,9 +17,11 @@ class Cart extends Model
 
     }
 
-    public function order()
-    {
+    // 以下方式可以用price來代表cart裡面每一項產品的總價
 
-        return $this->belongsToMany('App\Models\Order', 'product_orders', 'product_id', 'order_id');
-    }
+    // public function getPriceAttribute()
+    // {
+    //     return $this->products->price * $this->quantity ;
+    // }
+
 }

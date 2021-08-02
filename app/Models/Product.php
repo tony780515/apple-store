@@ -14,4 +14,10 @@ class Product extends Model
     {   //return $this->hasOne('App\要連結的model名稱','外鍵','主鍵')
         return $this->hasOne('App\Models\Category','id','category_id');
     }
+
+    public function orders()
+    {
+
+        return $this->belongsToMany('App\Models\Order', 'product_orders');
+    }
 }
