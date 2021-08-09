@@ -12,7 +12,7 @@ class Order extends Model
 
     public function products()
     {
-        //return $this->belongsToMany('App\要連結的model名稱','關聯的第三個資料表','外鍵','主鍵')
-        return $this->belongsToMany('App\Models\Order', 'product_orders');
+        //return $this->belongsToMany('App\要連結的model名稱','關聯的第三個資料表')
+        return $this->belongsToMany('App\Models\Product', 'product_orders')->withPivot('quantity');
     }
 }

@@ -20,7 +20,6 @@
         @else
             @foreach ($carts as $cart)
             <div class="item">
-                <!-- <input type="checkbox" checked> -->
                 <div class="photo">
                     <img src="{{$cart->products->img}}" alt="">
                 </div>
@@ -34,7 +33,6 @@
                         <button>+</button>
                     </form>
                     @endif
-                    {{-- <input type="text" min="1" max="{{$cart->products->quantity}}" value="{{$cart->quantity}}"> --}}
                     <span>{{$cart->quantity}}</span>
                     <form action="/shoppingcart/minus/{{$cart->products->id}}">
                         <button>-</button>
@@ -60,22 +58,35 @@
     <form action="/orderlist/store" method="POST">
         @csrf
         <div class="customer_data">
+            @if ($errors->any())
+                <div style="width: 100%">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li style="color: red">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+             @endif
             <div class="customer_name"><span style="color: red;" >*</span>收件人名稱:
                 <input type="text" name="customer_name" required>
             </div>
-            <div class="email" >Email:
+            <div class="email" required><span style="color: red;" >*</span>Email:
                 <input type="email" name="email">
             </div>
             <div class="address" required><span style="color: red">*</span>寄送地址:
                 <input type="text" name="address">
             </div>
             <div class="phone"   required><span style="color: red">*</span>手機號碼:
-                <input type="tel" name="phone" pattern="[0-9]{10}">
+                <input type="tel" name="phone" >
             </div>
-            <div class="backtoshop"><a href="/">繼續購物</a></div>
+            <a href="/"><div class="backtoshop">繼續購物</div></a>
             <div class="pay"><button type="submit">結帳</button></div>
         </div>
     </form>
-    <div class="backtotop"><a href="#"><img src="https://icon-library.com/images/back-to-top-icon-png/back-to-top-icon-png-8.jpg" alt=""></a></div>
+    <div class="backtotop">
+        <a href="#">
+            <img src="https://icon-library.com/images/back-to-top-icon-png/back-to-top-icon-png-8.jpg" alt="">
+        </a>
+    </div>
 </main>
 @endsection

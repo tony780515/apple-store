@@ -16,12 +16,8 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {
-
-
-        $carts = Cart::with('products')->get();
-        $usercart = $carts->where('ip', $request->ip());
-        $total_quantity = $usercart->sum('quantity');
-        
+        $carts = Cart::with('products')->userIp()->get();
+        $total_quantity = $carts->sum('quantity');
 
         // 方法1:
         // $total_price = 0;
@@ -30,10 +26,9 @@ class CartController extends Controller
         // }
 
         // 方法2:
-        $total_price = $usercart->sum(function ($cart) {
+        $total_price = $carts->sum(function ($cart) {
             return $cart->products->price * $cart->quantity;
         });
-
 
         return view('shoppingcart', compact('carts', 'total_quantity', 'total_price'));
     }
@@ -58,52 +53,48 @@ class CartController extends Controller
     {
         $product = Product::find($id);
 
-        $cart = Cart::where('ip', $request->ip())
+        $cart = Cart::userIp()
         ->where('product_id', $product->id)
         ->first();
 
-
-        if($cart){
+        if($cart && $cart->quantity < $cart->products->quantity){
                 $cart->quantity =  $cart->quantity + 1;
                 $cart->save();
-
-        }else{
-            Cart::create(array(
+        }else if(!$cart){
+            Cart::create([
                 'ip' => $request->ip(),
                 'product_id' => $product->id,
                 'quantity' => 1
-                ));
+                ]);
         }
-
 
         return redirect('/shoppingcart');
     }
 
     public function add(Request $request, $id)
     {
-        $cart = Cart::where('ip', $request->ip())
-        ->where('product_id',$id)->first();
+        $cart = Cart::userIp()
+        ->where('product_id', $id)->first();
 
         if($cart->quantity < $cart->products->quantity){
             $cart->quantity =  $cart->quantity + 1;
             $cart->save();
         }
 
-
         return redirect('/shoppingcart');
     }
 
     public function minus(Request $request, $id)
     {
-        $cart = Cart::where('ip', $request->ip())
-        ->where('product_id',$id)->first();
+        $cart = Cart::userIp()
+        ->where('product_id', $id)->first();
 
         if($cart){
-            if($cart->quantity >1){
+            if($cart->quantity > 1){
                 $cart->quantity =  $cart->quantity - 1;
                 $cart->save();
             }else{
-                $cart ->delete();
+                $cart->delete();
             }
         }
 
@@ -121,7 +112,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        $cart = Cart::find($id);
+        $cart = Cart::userIp()->find($id);
         $cart ->delete();
         return redirect('/shoppingcart');
     }
