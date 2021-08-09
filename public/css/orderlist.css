@@ -41,11 +41,6 @@ main {
     position: relative;
 }
 
-/* .cart input[type="checkbox"] {
-width: 18px;
-height: 18px;
-} */
-
 .cart .photo {
     width: 20%;
     margin-left: 20px;
@@ -93,8 +88,6 @@ height: 18px;
     cursor: pointer;
 }
 
-
-
 .cart .account {
     display: flex;
     justify-content: space-evenly;
@@ -115,7 +108,6 @@ height: 18px;
     font-weight: bold;
     text-align: center;
 }
-
 
 .order {
     width: 40%;
@@ -138,5 +130,23 @@ td {
 
 .order td {
     border-bottom: gainsboro solid 1px;
+}
+
+.backtoshop {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+}
+
+.backtoshop a {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 8px;
+    margin:auto;
+    width: 10%;
+    border: grey 1px solid;
+    border-radius: 5px;
+    background: rgba(220, 220, 220, 0.63);
 }
 

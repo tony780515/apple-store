@@ -13,7 +13,6 @@ main {
     text-align: center;
 }
 
-
 .cart {
     width: 70%;
     margin:20px auto;
@@ -31,11 +30,6 @@ main {
     border-bottom: gainsboro solid 1px;
     position: relative;
 }
-
-/* .cart input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-} */
 
 .cart .photo {
     width: 20%;
@@ -82,8 +76,6 @@ main {
     font-size: 20px;
     cursor: pointer;
 }
-
-
 
 .cart .account {
     display: flex;
@@ -169,4 +161,3 @@ main {
 .customer_data .pay button:hover {
     background-color: #0076edec;
 }
-
