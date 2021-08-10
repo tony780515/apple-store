@@ -15,3 +15,14 @@
 2. 透過後台的ip驗證,可到購物車內調整數量以及確認總件數及總金額
 3. 填寫個人資訊的欄位,前後台階有驗證機制
 4. 按下結帳後會生成訂單給客人同時清空購物車
+
+
+## 商城畫面
+首頁
+![image](https://imgur.com/yZLaIvZ)
+
+購物車
+![image](https://imgur.com/veewEan)
+
+訂單明細
+![image](https://imgur.com/QPdhboR)
