@@ -1,5 +1,6 @@
 # 蘋果商城及購物車
-相關技術:PHP,Laravel 8,MySQL,HTML,CSS,JaveScrip
+相關技術:PHP, Laravel 8, MySQL, HTML, CSS, JaveScrip
+
 
 ## 環境建置(以Docker為例)
 1. `sail up`
@@ -7,6 +8,7 @@
 3. 複製.env.example,貼上後改名為.env
 4. `php artisan key:generate`
 5. `php artisan migrate --seed`
+
 
 ## 功能介紹
 1. 可將想購買的物品放入購物車並可從右上角看出購物車裡的物品件數
