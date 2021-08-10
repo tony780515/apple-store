@@ -25,7 +25,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('template.template', function ($view) {
+        View::composer('layout.template', function ($view) {
             $carts = Cart::with('products')->get();
             $usercart = $carts->where('ip', request()->ip());
             $quantity = $usercart->sum('quantity');

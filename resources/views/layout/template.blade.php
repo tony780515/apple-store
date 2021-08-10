@@ -27,10 +27,10 @@
                 <a href="/#c4">Watch</a>
             </div>
             <div class="navbar-right">
-                <form class="search" action="">
+                {{-- <form class="search" action="">
                     <input type="search">
                     <button><i class="fas fa-search"></i></button>
-                </form>
+                </form> --}}
                 <div class="icon">
                     <a href="/shoppingcart">
                         <i class="fas fa-shopping-cart">

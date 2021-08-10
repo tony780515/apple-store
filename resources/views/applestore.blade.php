@@ -1,4 +1,4 @@
-@extends('template.template')
+@extends('layout.template')
 
 @section('css')
 <link rel="stylesheet" href="{{mix('css/applestore.css')}}">
@@ -103,6 +103,9 @@
         @endforeach
     </div>
 </div>
-<div class="backtotop"><a href="#"><img
-            src="https://icon-library.com/images/back-to-top-icon-png/back-to-top-icon-png-8.jpg" alt=""></a></div>
+<div class="backtotop">
+    <a href="#">
+        <img src="https://icon-library.com/images/back-to-top-icon-png/back-to-top-icon-png-8.jpg" alt="">
+    </a>
+</div>
 @endsection

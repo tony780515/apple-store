@@ -10,25 +10,6 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -48,7 +29,7 @@ class OrderController extends Controller
 
         $carts = Cart::where('ip', $request->ip())->get();
 
-        if(!$carts->isEmpty()){
+        if (!$carts->isEmpty()) {
             $order = Order::create([
                 'ip'=> $request->ip(),
                 'customer_name' => $request->customer_name,
@@ -59,22 +40,18 @@ class OrderController extends Controller
 
             $order->serial = 'A0000' . $order->id;
             $order->save();
-        }
 
-        foreach ($carts as $cart){
-            // 多對多關聯才會用到attach來新增資料
-            $order->products()->attach($cart->product_id, ['quantity' => $cart->quantity]);
-            // 將產品傳到product_order之後就將購物車清空
-            $cart->delete();
-        }
+            foreach ($carts as $cart) {
+                // 多對多關聯才會用到attach來新增資料
+                $order->products()->attach($cart->product_id, ['quantity' => $cart->quantity]);
+                // 將產品資訊傳到product_order之後就將購物車清空
+                $cart->delete();
+            }
 
-        if($carts->isEmpty()){
-            return redirect('/shoppingcart');
-            // abort(404);
-        }else{
             return redirect()->route('orderlist', ['id' => $order->id]);
         }
 
+        return redirect('/shoppingcart');
     }
 
     /**
@@ -85,7 +62,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $order = Order::where('ip',request()->ip())->find($id);
+        $order = Order::where('ip',request()->ip())->findOrFail($id);
         $total_quantity =ProductOrder::where('order_id',$id)->sum('quantity');
 
         $total_price = $order->products->sum(function ($product){
@@ -95,37 +72,4 @@ class OrderController extends Controller
         return view('orderlist',compact('order', 'total_quantity', 'total_price'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Order $order)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Order $order)
-    {
-        //
-    }
 }

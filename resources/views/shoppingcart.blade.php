@@ -1,4 +1,4 @@
-@extends('template.template')
+@extends('layout.template')
 
 @section('css')
     <link rel="stylesheet" href="{{mix('css/shoppingcart.css')}}">
@@ -70,14 +70,14 @@
             <div class="customer_name"><span style="color: red;" >*</span>收件人名稱:
                 <input type="text" name="customer_name" required>
             </div>
-            <div class="email" required><span style="color: red;" >*</span>Email:
-                <input type="email" name="email">
+            <div class="email"><span style="color: red;" >*</span>Email:
+                <input type="email" name="email" required>
             </div>
-            <div class="address" required><span style="color: red">*</span>寄送地址:
-                <input type="text" name="address">
+            <div class="address"><span style="color: red">*</span>寄送地址:
+                <input type="text" name="address" required>
             </div>
-            <div class="phone"   required><span style="color: red">*</span>手機號碼:
-                <input type="tel" name="phone" >
+            <div class="phone"><span style="color: red">*</span>手機號碼:
+                <input type="tel" name="phone"  required>
             </div>
             <a href="/"><div class="backtoshop">繼續購物</div></a>
             <div class="pay"><button type="submit">結帳</button></div>

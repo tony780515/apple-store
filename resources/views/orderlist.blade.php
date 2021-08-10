@@ -1,4 +1,4 @@
-@extends('template.template')
+@extends('layout.template')
 
 @section('css')
     <link rel="stylesheet" href="{{mix('css/orderlist.css')}}">

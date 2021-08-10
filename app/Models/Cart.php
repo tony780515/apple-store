@@ -24,7 +24,7 @@ class Cart extends Model
     //     return $this->products->price * $this->quantity ;
     // }
 
-    public function scopeUserip($query)
+    public function scopeUserIp($query)
     {
         return $query->where('ip', request()->ip());
     }
