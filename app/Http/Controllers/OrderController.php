@@ -31,7 +31,7 @@ class OrderController extends Controller
 
         if (!$carts->isEmpty()) {
             $order = Order::create([
-                'ip'=> $request->ip(),
+                'ip' => $request->ip(),
                 'customer_name' => $request->customer_name,
                 'email' => $request->email,
                 'address' => $request->address,
@@ -62,14 +62,14 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $order = Order::where('ip',request()->ip())->findOrFail($id);
-        $total_quantity =ProductOrder::where('order_id',$id)->sum('quantity');
+        $order = Order::where('ip', request()->ip())->findOrFail($id);
+        $total_quantity = ProductOrder::where('order_id', $id)->sum('quantity');
 
-        $total_price = $order->products->sum(function ($product){
+        $total_price = $order->products->sum(function ($product) {
             return $product->price * $product->pivot->quantity;
         });
 
-        return view('orderlist',compact('order', 'total_quantity', 'total_price'));
+        return view('orderlist', compact('order', 'total_quantity', 'total_price'));
     }
 
 }

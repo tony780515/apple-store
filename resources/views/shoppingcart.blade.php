@@ -50,7 +50,7 @@
             @endforeach
         <div class="account">
             <div class="order_quantity">共 <span class="total_red">{{$total_quantity}}</span> 件產品</div>
-            <div class="order_total">總金額:<span class="total_red">NT${{$total_price}}</span></div>
+            <div class="order_total">總金額:<span class="total_red">NT$ {{$total_price}}</span></div>
         </div>
         @endif
     </div>
@@ -68,16 +68,16 @@
                 </div>
              @endif
             <div class="customer_name"><span style="color: red;" >*</span>收件人名稱:
-                <input type="text" name="customer_name" required>
+                <input type="text" name="customer_name" autocomplete="off" required>
             </div>
             <div class="email"><span style="color: red;" >*</span>Email:
-                <input type="email" name="email" required>
+                <input type="email" name="email" autocomplete="off" required>
             </div>
             <div class="address"><span style="color: red">*</span>寄送地址:
-                <input type="text" name="address" required>
+                <input type="text" name="address" autocomplete="off" required>
             </div>
             <div class="phone"><span style="color: red">*</span>手機號碼:
-                <input type="tel" name="phone"  required>
+                <input type="tel" name="phone"  autocomplete="off" required>
             </div>
             <a href="/"><div class="backtoshop">繼續購物</div></a>
             <div class="pay"><button type="submit">結帳</button></div>

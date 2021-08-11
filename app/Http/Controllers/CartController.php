@@ -48,14 +48,14 @@ class CartController extends Controller
         ->first();
 
         if ($cart && $cart->quantity < $cart->products->quantity) {
-            $cart->quantity =  $cart->quantity + 1;
+            $cart->quantity = $cart->quantity + 1;
             $cart->save();
         } else if (!$cart) {
             Cart::create([
                 'ip' => $request->ip(),
                 'product_id' => $product->id,
                 'quantity' => 1
-                ]);
+            ]);
         }
 
         return redirect('/');

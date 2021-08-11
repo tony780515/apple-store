@@ -1,5 +1,5 @@
 # 蘋果商城及購物車
-相關技術:PHP, Laravel 8, MySQL, HTML, CSS, JaveScrip
+相關技術:PHP, Laravel 8, MySQL, HTML, CSS, JaveScript
 
 
 ## 環境建置(以Docker為例)

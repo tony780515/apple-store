@@ -17,23 +17,23 @@ class ProductController extends Controller
     {
         $products = Product::get();
 
-        $macs = Product::whereHas('category', function($q){
-            $q->where('code','mac');
+        $macs = Product::whereHas('category', function ($q) {
+            $q->where('code', 'mac');
         })->get();
 
-        $ipads = Product::whereHas('category', function($q){
-            $q->where('code','ipad');
+        $ipads = Product::whereHas('category', function ($q) {
+            $q->where('code', 'ipad');
         })->get();
 
-        $iphones = Product::whereHas('category', function($q){
-            $q->where('code','iphone');
+        $iphones = Product::whereHas('category', function ($q) {
+            $q->where('code', 'iphone');
         })->get();
 
-        $watchs = Product::whereHas('category', function($q){
-            $q->where('code','watch');
+        $watchs = Product::whereHas('category', function ($q) {
+            $q->where('code', 'watch');
         })->get();
 
-        return view('applestore',compact('macs', 'ipads', 'iphones', 'watchs'));
+        return view('applestore', compact('macs', 'ipads', 'iphones', 'watchs'));
     }
 
 }
