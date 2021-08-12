@@ -17,7 +17,7 @@
         <div class="navbar">
             <div class="logo">
                 <a href="/">
-                    <img src="http://4.bp.blogspot.com/-uKViBqvNSZU/Ve4gpgCrmTI/AAAAAAAAaAI/JAkVTADYdDo/s1600/Apple_Computer_Logo_rainbow.svg.png" alt="">
+                    <img src="{{asset('images/Apple_Logo.png')}}" alt="">
                 </a>
             </div>
             <div class="navbar-left">
