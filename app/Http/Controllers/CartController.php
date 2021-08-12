@@ -89,9 +89,6 @@ class CartController extends Controller
         return redirect('/shoppingcart');
     }
 
-
-
-
     /**
      * Remove the specified resource from storage.
      *
@@ -102,6 +99,7 @@ class CartController extends Controller
     {
         $cart = Cart::userIp()->find($id);
         $cart->delete();
+
         return redirect('/shoppingcart');
     }
 }

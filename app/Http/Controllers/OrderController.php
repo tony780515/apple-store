@@ -66,6 +66,7 @@ class OrderController extends Controller
         $total_quantity = ProductOrder::where('order_id', $id)->sum('quantity');
 
         $total_price = $order->products->sum(function ($product) {
+            
             return $product->price * $product->pivot->quantity;
         });
 

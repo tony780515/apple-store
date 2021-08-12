@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/shoppingcart', function () {
-//     return view('shoppingcart');
-// });
+Route::get('/searchlist', function () {
+    return view('searchlist');
+});
 
 Route::get('/', 'App\Http\Controllers\ProductController@index');
 Route::get('/shoppingcart', 'App\Http\Controllers\CartController@index');
@@ -26,4 +26,6 @@ Route::get('/shoppingcart/destroy/{id}', 'App\Http\Controllers\CartController@de
 
 Route::get('/orderlist/{id}', 'App\Http\Controllers\OrderController@show')->name('orderlist');
 Route::post('/orderlist/store', 'App\Http\Controllers\OrderController@store');
+
+Route::get('/searchlist', 'App\Http\Controllers\ProductController@search');
 
