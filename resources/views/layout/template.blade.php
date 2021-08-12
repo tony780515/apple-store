@@ -28,7 +28,7 @@
             </div>
             <div class="navbar-right">
                 <form class="search" action="/searchlist" method="GET">
-                    <input type="search" name="search" required  autocomplete="off">
+                    <input type="search" name="search" autocomplete="off" placeholder="搜尋品名可查存貨量" required>
                     <button><i class="fas fa-search"></i></button>
                 </form>
                 <div class="icon">

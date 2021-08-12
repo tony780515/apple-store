@@ -10,7 +10,7 @@
     <div class="group-photo">
         @foreach ($macs as $mac)
             <div class="box">
-                <div class="photo"><a href=""><img src="{{asset($mac->img)}}" alt=""></a></div>
+                <div class="photo"><img src="{{asset($mac->img)}}" alt=""></div>
                 <div class="text">
                     <h3>{{$mac->name}}</h3>
                     <h4>NT$ {{$mac->price}}</h4>
@@ -33,7 +33,7 @@
     <div class="group-photo">
         @foreach ($ipads as $ipad)
         <div class="box">
-            <div class="photo"><a href=""><img src="{{asset($ipad->img)}}" alt=""></a></div>
+            <div class="photo"><img src="{{asset($ipad->img)}}" alt=""></div>
             <div class="text">
                     <h3>{{$ipad->name}}</h3>
                     <h4>NT$ {{$ipad->price}}</h4>
@@ -56,7 +56,7 @@
     <div class="group-photo">
         @foreach ($iphones as $iphone)
         <div class="box">
-            <div class="photo"><a href=""><img src="{{asset($iphone->img)}}" alt=""></a></div>
+            <div class="photo"><img src="{{asset($iphone->img)}}" alt=""></div>
             <div class="text">
                 <h3>{{$iphone->name}}</h3>
                 <h4>NT$ {{$iphone->price}}</h4>
@@ -80,9 +80,7 @@
     <div class="group-photo">
         @foreach ($watchs as $watch)
         <div class="box">
-            <div class="photo">
-                <a href=""><img src="{{asset($watch->img)}}" alt=""></a>
-            </div>
+            <div class="photo"><img src="{{asset($watch->img)}}" alt=""></div>
             <div class="text">
                 <h3>{{$watch->name}}</h3>
                 <h4>NT$ {{$watch->price}}</h4>

@@ -15,7 +15,7 @@
                 <div class="name">產品:{{$product->name}}</div>
                 <div class="item_price">單價: NT$ {{$product->price}}</div>
             </div>
-            <div class="item_quantity">剩餘 {{$product->quantity}}件</div>
+            <div class="item_quantity">剩餘 {{$product->quantity}} 件</div>
             <div class="link">
                 @if ($product->quantity > 0)
                     <div class="link-text"><a href="/shoppingcart/store/{{$product->id}}">加入購物車</a></div>
