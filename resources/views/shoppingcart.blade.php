@@ -68,16 +68,16 @@
                 </div>
              @endif
             <div class="customer_name"><span style="color: red;" >*</span>收件人名稱:
-                <input type="text" name="customer_name" autocomplete="off" required>
+                <input type="text" name="customer_name" value="{{ old('customer_name') }}" autocomplete="off" required>
             </div>
             <div class="email"><span style="color: red;" >*</span>Email:
-                <input type="email" name="email" autocomplete="off" required>
+                <input type="email" name="email" value="{{ old('email') }}" autocomplete="off" required>
             </div>
             <div class="address"><span style="color: red">*</span>寄送地址:
-                <input type="text" name="address" autocomplete="off" required>
+                <input type="text" name="address" value="{{ old('address') }}" autocomplete="off" required>
             </div>
             <div class="phone"><span style="color: red">*</span>手機號碼:
-                <input type="tel" name="phone"  autocomplete="off" required>
+                <input type="tel" name="phone" value="{{ old('phone') }}"  autocomplete="off" required>
             </div>
             <a href="/"><div class="backtoshop">繼續購物</div></a>
             <div class="pay"><button type="submit">結帳</button></div>

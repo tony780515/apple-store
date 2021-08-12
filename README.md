@@ -1,9 +1,10 @@
 # 蘋果商城及購物車
-相關技術:PHP, Laravel 8, MySQL, HTML, CSS, JaveScript
+相關技術:PHP, Laravel 8, MySQL, HTML, CSS, JavaScript
+功能介紹影片:https://youtu.be/GdPjMn-j6Rs
 
 
 ## 環境建置(以Docker為例)
-1. `sail up`
+1. `./vendor/bin/sail up`
 2. `composer install`
 3. 複製.env.example,貼上後改名為.env
 4. `php artisan key:generate`
