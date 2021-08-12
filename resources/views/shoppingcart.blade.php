@@ -11,7 +11,7 @@
         @if ($carts->isEmpty())
             <div class="item">
                 <div class="photo">
-                    <img src="https://s4.lativ.com.tw/images/icon/icon_blank_cart.png" alt="">
+                    <img src="{{asset('images/icon_blank_cart.png')}}" alt="">
                 </div>
                 <div class="iteminfo">
                     <div class="name">您的購物車中沒有商品</div>
@@ -85,7 +85,7 @@
     </form>
     <div class="backtotop">
         <a href="#">
-            <img src="https://icon-library.com/images/back-to-top-icon-png/back-to-top-icon-png-8.jpg" alt="">
+            <img src="{{asset('images/back-to-top.jpg')}}" alt="">
         </a>
     </div>
 </main>

@@ -6,14 +6,14 @@
 
 @section('main')
     <div class="success">
-        <img src="https://wemediaschool.com/wp-content/uploads/2021/06/tick-green.png" alt="">
+        <img src="{{asset('images/check-out-success.png')}}" alt="">
         <div class="text">購買成功</div>
     </div>
     <div class="cart">
         @foreach ($order->products as $product)
         <div class="item">
             <div class="photo">
-                <img src="{{$product->img}}" alt="">
+                <img src="{{asset($product->img)}}" alt="">
             </div>
             <div class="iteminfo">
                 <div class="name">產品:{{$product->name}}</div>
@@ -62,7 +62,7 @@
     </div>
     <div class="backtotop">
         <a href="#">
-            <img src="https://icon-library.com/images/back-to-top-icon-png/back-to-top-icon-png-8.jpg" alt="">
+            <img src="{{asset('images/back-to-top.jpg')}}" alt="">
         </a>
     </div>
 @endsection

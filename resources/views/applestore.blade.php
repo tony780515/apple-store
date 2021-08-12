@@ -6,11 +6,11 @@
 
 @section('main')
 <div id="c1" class="content">
-    <div class="banner"><img src="https://www.apple.com/v/home/z/images/heroes/imac/hero_imac__dqh65mwjj04m_largetall.jpg" alt=""></div>
+    <div class="banner"><img src="{{asset('images/Banner_Mac.jpg')}}" alt=""></div>
     <div class="group-photo">
         @foreach ($macs as $mac)
             <div class="box">
-                <div class="photo"><a href=""><img src="{{$mac->img}}" alt=""></a></div>
+                <div class="photo"><a href=""><img src="{{asset($mac->img)}}" alt=""></a></div>
                 <div class="text">
                     <h3>{{$mac->name}}</h3>
                     <h4>NT$ {{$mac->price}}</h4>
@@ -28,14 +28,12 @@
     </div>
 </div>
 <div id="c2" class="content">
-    <div class="banner"><img
-            src="https://www.apple.com/v/home/z/images/heroes/ipad-pro/hero_ipad_pro_non_avail__fcrsmhs4b7ma_largetall.jpg"
-            alt="">
+    <div class="banner"><img src="{{asset('images/Banner_IPad.jpg')}}" alt="">
     </div>
     <div class="group-photo">
         @foreach ($ipads as $ipad)
         <div class="box">
-            <div class="photo"><a href=""><img src="{{$ipad->img}}" alt=""></a></div>
+            <div class="photo"><a href=""><img src="{{asset($ipad->img)}}" alt=""></a></div>
             <div class="text">
                     <h3>{{$ipad->name}}</h3>
                     <h4>NT$ {{$ipad->price}}</h4>
@@ -53,14 +51,12 @@
     </div>
 </div>
 <div id="c3" class="content">
-    <div class="banner"><img
-            src="https://content.vodafone.co.nz/dims4/default/d98478e/2147483647/strip/true/crop/2360x640+0+0/resize/1640x445!/quality/90/?url=http%3A%2F%2Fvodafonenz-brightspot.s3.amazonaws.com%2F3d%2F7e%2Fbc19d8a74fcea1c2532b2199c4b0%2Fcbu-presale-family-page-hello-banner-desktop-banner-iphone-12-pro-no-cta-copy-2x.png"
-            alt="">
+    <div class="banner"><img src="{{asset('images/Banner_IPhone.png')}}" alt="">
     </div>
     <div class="group-photo">
         @foreach ($iphones as $iphone)
         <div class="box">
-            <div class="photo"><a href=""><img src="{{$iphone->img}}" alt=""></a></div>
+            <div class="photo"><a href=""><img src="{{asset($iphone->img)}}" alt=""></a></div>
             <div class="text">
                 <h3>{{$iphone->name}}</h3>
                 <h4>NT$ {{$iphone->price}}</h4>
@@ -79,13 +75,13 @@
 </div>
 <div id="c4" class="content">
     <div class="banner">
-        <img src="https://mac24h.vn/images/companies/1/untitled%20folder%201/untitled%20folder/banner-watch-seri4.jpg?1537526795127"alt="">
+        <img src="{{asset('images/Banner_Watch.jpg')}}"alt="">
     </div>
     <div class="group-photo">
         @foreach ($watchs as $watch)
         <div class="box">
             <div class="photo">
-                <a href=""><img src="{{$watch->img}}" alt=""></a>
+                <a href=""><img src="{{asset($watch->img)}}" alt=""></a>
             </div>
             <div class="text">
                 <h3>{{$watch->name}}</h3>
@@ -105,7 +101,7 @@
 </div>
 <div class="backtotop">
     <a href="#">
-        <img src="https://icon-library.com/images/back-to-top-icon-png/back-to-top-icon-png-8.jpg" alt="">
+        <img src="{{asset('images/back-to-top.jpg')}}" alt="">
     </a>
 </div>
 @endsection
