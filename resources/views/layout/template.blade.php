@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>蘋果購物商城</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="{{mix('css/template.css')}}">
@@ -45,6 +45,11 @@
     </nav>
     <main>
         @yield('main')
+        <div class="backtotop">
+            <a href="#">
+                <img src="{{asset('images/back-to-top.jpg')}}" alt="">
+            </a>
+        </div>
     </main>
     <footer>
         <h5>Copyright © 2021 Apple Inc. 保留一切權利。</h5>

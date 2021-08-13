@@ -60,9 +60,4 @@
     <div class="backtoshop">
         <a href="/">繼續購物</a>
     </div>
-    <div class="backtotop">
-        <a href="#">
-            <img src="{{asset('images/back-to-top.jpg')}}" alt="">
-        </a>
-    </div>
 @endsection

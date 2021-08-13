@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Order;
+use App\Mail\OrderMail;
 use App\Models\Product;
 use App\Models\ProductOrder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -48,6 +50,8 @@ class OrderController extends Controller
                 $cart->delete();
             }
 
+            Mail::to($order->email)->send(new OrderMail($order));
+
             return redirect()->route('orderlist', ['id' => $order->id]);
         }
 
@@ -66,7 +70,7 @@ class OrderController extends Controller
         $total_quantity = ProductOrder::where('order_id', $id)->sum('quantity');
 
         $total_price = $order->products->sum(function ($product) {
-            
+
             return $product->price * $product->pivot->quantity;
         });
 

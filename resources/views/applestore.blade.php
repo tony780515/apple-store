@@ -97,9 +97,4 @@
         @endforeach
     </div>
 </div>
-<div class="backtotop">
-    <a href="#">
-        <img src="{{asset('images/back-to-top.jpg')}}" alt="">
-    </a>
-</div>
 @endsection

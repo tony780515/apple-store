@@ -83,10 +83,5 @@
             <div class="pay"><button type="submit">結帳</button></div>
         </div>
     </form>
-    <div class="backtotop">
-        <a href="#">
-            <img src="{{asset('images/back-to-top.jpg')}}" alt="">
-        </a>
-    </div>
 </main>
 @endsection
