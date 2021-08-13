@@ -21,7 +21,7 @@
 
 ## 商城畫面
 #### 1.首頁
-![image](https://i.imgur.com/yZLaIvZ.png)
+![image](https://i.imgur.com/yEF9zEA.png)
 
 #### 2.購物車
 ![image](https://imgur.com/veewEan.png)
