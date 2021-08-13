@@ -1,6 +1,6 @@
 # 蘋果商城及購物車
 * 相關技術:PHP, Laravel 8, MySQL, HTML, CSS, JavaScript
-* 功能介紹影片:https://youtu.be/GdPjMn-j6Rs
+* 功能介紹影片:https://www.youtube.com/watch?v=-h8kuzqNwV0
 
 
 ## 環境建置(以Docker為例)
