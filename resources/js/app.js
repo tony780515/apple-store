@@ -1,4 +1,4 @@
-// require('./bootstrap');
+require('./bootstrap');
 var navbar = document.querySelector("nav")
 
 window.onscroll = function () {

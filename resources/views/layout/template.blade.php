@@ -28,9 +28,8 @@
                 <a href="/#c4">Watch</a>
             </div>
             <div class="navbar-right">
-                <form class="search" action="/searchlist" method="GET">
-                    <input type="search" name="search" autocomplete="off" placeholder="搜尋品名可查存貨量" required>
-                    <button><i class="fas fa-search"></i></button>
+                <form class="search" action="/searchlist">
+                    <button>產品搜尋<i class="fas fa-search"></i></button>
                 </form>
                 <div class="icon">
                     <a href="/shoppingcart">
@@ -55,8 +54,8 @@
     <footer>
         <h5>Copyright © 2021 Apple Inc. 保留一切權利。</h5>
     </footer>
-
     <script src="{{mix('js/app.js')}}" type="text/javascript"></script>
+    @yield('js')
 </body>
 
 </html>

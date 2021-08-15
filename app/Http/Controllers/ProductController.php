@@ -34,25 +34,8 @@ class ProductController extends Controller
         return view('applestore', compact('macs', 'ipads', 'iphones', 'watchs'));
     }
 
-    public function search(Request $request)
+    public function search()
     {
-        $request->validate(
-            [
-                'search' => 'max:255'
-            ]
-        );
-
-        $search = $request->get('search');
-
-        if ($search) {
-            $products = Product::where('name', 'like', '%' . $search . '%')->get();
-
-            if (!$products->isEmpty()) {
-
-            return view('searchlist', compact('products'));
-            }
-        }
-
-        return redirect('/');
+        return view('searchlist');
     }
 }
