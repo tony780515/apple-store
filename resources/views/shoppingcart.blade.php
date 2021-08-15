@@ -21,7 +21,7 @@
             @foreach ($carts as $cart)
             <div class="item">
                 <div class="photo">
-                    <img src="{{$cart->products->img}}" alt="">
+                    <img src="{{asset($cart->products->img)}}" alt="">
                 </div>
                 <div class="iteminfo">
                     <div class="name">產品:{{$cart->products->name}}</div>

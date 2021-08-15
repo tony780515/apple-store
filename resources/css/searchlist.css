@@ -1,7 +1,14 @@
 main {
     width: 100%;
     padding-top: 100px;
-    min-height: 100vh;
+    min-height: calc(100vh - 70px);
+}
+
+main .search_input {
+    width: 30%;
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
 }
 
 main .search {
@@ -58,28 +65,16 @@ main .search .link-text {
     margin-top: 9px;
 }
 
-main .search .link-icon {
-    font-size: 25px;
-    position: relative;
-    top: 7px;
-    left: 5px;
-    transition: 0.5s;
-}
-
 main .search .soldout {
     font-size: 15px;
     color: red;
-}
-
-main .search .link:hover .link-icon {
-    left: 10px;
 }
 
 main .search .link:hover .link-text {
     text-decoration: underline;
 }
 
-main .search .link-text a,
-.search .link-icon {
+main .search .link-text a
+{
     color: #0067B8;
 }

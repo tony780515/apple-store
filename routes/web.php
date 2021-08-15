@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/searchlist', function () {
-    return view('searchlist');
-});
+// Route::get('/searchlist', function () {
+//     return view('searchlist');
+// });
 
 Route::get('/', 'App\Http\Controllers\ProductController@index');
 Route::get('/shoppingcart', 'App\Http\Controllers\CartController@index');

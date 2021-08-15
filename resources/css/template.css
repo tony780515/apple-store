@@ -95,6 +95,11 @@ nav.sm {
 
 .navbar-right .search {
     display: flex;
+    margin-right: 40px;
+}
+
+.navbar-right .search button {
+    cursor: pointer;
 }
 
 .navbar-right .icon i{
