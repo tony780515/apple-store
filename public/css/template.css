@@ -148,3 +148,6 @@ footer h5 {
   top: 15px;
 }
 
+[v-cloak] {
+    display: none;
+}

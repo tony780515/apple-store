@@ -109,28 +109,28 @@ class ProductSeeder extends Seeder
             ],
             [
                 'category_id' => self::CATEGORY_WATCH,
-                'name' => 'Apple Watch Series 6',
+                'name' => 'Watch Series 6',
                 'price' => 12900,
                 'quantity' => 20,
                 'img' => 'images/Product_AppleWatchSeries 6.jpg'
             ],
             [
                 'category_id' => self::CATEGORY_WATCH,
-                'name' => 'Apple Watch SE',
+                'name' => 'Watch SE',
                 'price' => 8900,
                 'quantity' => 4,
                 'img' => 'images/Product_AppleWatchSE.jpg'
             ],
             [
                 'category_id' => self::CATEGORY_WATCH,
-                'name' => 'Apple Watch Series 3',
+                'name' => 'Watch Series 3',
                 'price' => 5900,
                 'quantity' => 2,
                 'img' => 'images/Product_AppleWatchSeries3.jpg'
             ],
             [
                 'category_id' => self::CATEGORY_WATCH,
-                'name' => 'Apple Watch Hermès',
+                'name' => 'Watch Hermès',
                 'price' => 37900,
                 'quantity' => 14,
                 'img' => 'images/Product_AppleWatchHermès.jpg'

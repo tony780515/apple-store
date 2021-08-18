@@ -110,9 +110,9 @@ main {
     flex-wrap: wrap;
 }
 
-.customer_data .customer_name,.email,.address,.phone {
-    width: 45%;
-    margin: 20px;
+.customer_data .customer_name,.email,.address,.phone{
+    width: 40%;
+    margin: 10px;
     padding: 0;
 }
 
@@ -126,6 +126,12 @@ main {
     box-sizing: border-box;
     font-size: 15px;
     background-color: rgba(220, 220, 220, 0.63);
+}
+
+.customer_data .link {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
 
 .customer_data .backtoshop {

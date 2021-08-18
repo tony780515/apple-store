@@ -32,7 +32,7 @@
 @endsection
 
 @section('main')
-<div id="app">
+<div id="app" v-cloak>
     <div class="search_input">
         輸入產品名稱: <input type="text" id="search"  v-model.trim="search" >
     </div>
@@ -42,7 +42,7 @@
                 <img v-bind:src="'/' + product.img" alt="">
             </div>
             <div class="iteminfo">
-                <div class="name">產品:@{{product.name}}</div>
+                <div class="name">產品: @{{product.name}}</div>
                 <div class="item_price">單價: NT$ @{{product.price}}</div>
             </div>
             <div class="item_quantity">剩餘 @{{product.quantity}} 件</div>

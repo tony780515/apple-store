@@ -74,7 +74,7 @@ main {
 
 .cart .item_total {
     position: absolute;
-    right: 100px;
+    right: 50px;
 }
 
 .cart .delete button {
@@ -90,7 +90,7 @@ main {
 .cart .account {
     display: flex;
     justify-content: space-evenly;
-    width: 30%;
+    width: 40%;
     margin-left: auto;
     text-align: center;
 }

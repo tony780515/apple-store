@@ -19,7 +19,7 @@
                 <div class="name">產品:{{$product->name}}</div>
                 <div class="item_price">單價: NT$ {{$product->price}}</div>
             </div>
-            <div class="item_quantity">數量 {{$product->pivot->quantity}}件</div>
+            <div class="item_quantity">數量 {{$product->pivot->quantity}} 件</div>
             <div class="item_total">NT$ {{$product->price * $product->pivot->quantity}}</div>
         </div>
         @endforeach

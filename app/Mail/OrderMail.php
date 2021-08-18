@@ -32,12 +32,12 @@ class OrderMail extends Mailable
      */
     public function build()
     {
-        $total_quantity = ProductOrder::where('order_id', $this->order->id)->sum('quantity');
+        // $total_quantity = ProductOrder::where('order_id', $this->order->id)->sum('quantity');
 
         $total_price = $this->order->products->sum(function ($product) {
             return $product->price * $product->pivot->quantity;
         });
 
-        return $this->view('Mail.order', compact('total_quantity', 'total_price'));
+        return $this->view('Mail.order', compact('total_price'));
     }
 }

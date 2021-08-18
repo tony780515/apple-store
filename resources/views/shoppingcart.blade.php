@@ -79,8 +79,10 @@
             <div class="phone"><span style="color: red">*</span>手機號碼:
                 <input type="tel" name="phone" value="{{ old('phone') }}"  autocomplete="off" required>
             </div>
-            <a href="/"><div class="backtoshop">繼續購物</div></a>
-            <div class="pay"><button type="submit">結帳</button></div>
+            <div class="link">
+                <a href="/"><div class="backtoshop">繼續購物</div></a>
+                <div class="pay"><button type="submit">結帳</button></div>
+            </div>
         </div>
     </form>
 </main>

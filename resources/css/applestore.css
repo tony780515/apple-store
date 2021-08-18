@@ -35,7 +35,7 @@ main {
 }
 
 .content .group-photo {
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     margin: auto;
@@ -76,7 +76,7 @@ main {
 }
 
 .content .box .link {
-    width: 35%;
+    width: 60%;
     display: flex;
 }
 
@@ -89,7 +89,7 @@ main {
 .content .box .link-icon {
     font-size: 25px;
     position: relative;
-    top: 7px;
+    top: 2px;
     left: 5px;
     transition: 0.5s;
 }

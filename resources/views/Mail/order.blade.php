@@ -37,6 +37,7 @@
             margin: 20px auto;
             padding: 20px;
             display: flex;
+            justify-content: center;
             align-items: center;
             border-bottom: gainsboro solid 1px;
             position: relative;
@@ -53,51 +54,10 @@
             height: 130px;
             object-fit: contain;
         }
-
         .cart .iteminfo {
             font-size: 15px;
             line-height: 25px;
             margin-left: 50px;
-        }
-
-        .cart .item_quantity {
-            position: absolute;
-            right: 200px;
-        }
-
-        .cart .item_quantity form {
-            display: inline;
-        }
-
-        .cart .item_quantity button {
-            margin: 0 5px;
-        }
-
-        .cart .item_total {
-            position: absolute;
-            right: 100px;
-        }
-
-        .cart .delete button {
-            position: absolute;
-            border: none;
-            background-color: white;
-            right: 0px;
-            bottom: 75px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .cart .account {
-            display: flex;
-            justify-content: space-evenly;
-            width: 30%;
-            margin-left: auto;
-            text-align: center;
-        }
-
-        .account .total_red {
-            color: red;
         }
 
         .order_title {
@@ -160,15 +120,16 @@
                 <div class="iteminfo">
                     <div class="name">產品:{{$product->name}}</div>
                     <div class="item_price">單價: NT$ {{$product->price}}</div>
+                    <div class="item_quantity">數量 {{$product->pivot->quantity}} 件</div>
                 </div>
-                <div class="item_quantity">數量 {{$product->pivot->quantity}}件</div>
-                <div class="item_total">NT$ {{$product->price * $product->pivot->quantity}}</div>
+
+                {{-- <div class="item_total">NT$ {{$product->price * $product->pivot->quantity}}</div> --}}
             </div>
             @endforeach
-            <div class="account">
+            {{-- <div class="account">
                 <div class="order_quantity">共 <span class="total_red">{{$total_quantity}}</span> 件產品</div>
                 <div class="order_total">總金額:<span class="total_red">NT$ {{$total_price}}</span></div>
-            </div>
+            </div> --}}
         </div>
         <div class="order_title">訂單明細</div>
         <div class="order">
