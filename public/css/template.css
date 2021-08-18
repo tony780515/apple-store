@@ -102,6 +102,10 @@ nav.sm {
     cursor: pointer;
 }
 
+.navbar-right .search i {
+    margin-left: 5px;
+}
+
 .navbar-right .icon i{
     font-size: 25px;
     color: white;
@@ -151,3 +155,4 @@ footer h5 {
 [v-cloak] {
     display: none;
 }
+
