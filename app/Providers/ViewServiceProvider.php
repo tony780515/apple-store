@@ -23,6 +23,9 @@ class ViewServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
+    // （重要！）要到config/app.php的底下新增一行
+    // 'View' => Illuminate\Support\Facades\View::class
     public function boot()
     {
         View::composer('layout.template', function ($view) {
