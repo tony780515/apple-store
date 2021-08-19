@@ -23,7 +23,7 @@
         watch: {
             search(val) {
                 this.products = axios.get('/api/search?search=' + val).then(response => {
-                this.products = response.data;
+                    this.products = response.data;
                 })
             },
         },
@@ -39,7 +39,7 @@
     <div class="search" id="search-list" v-for="product in products">
         <div class="item">
             <div class="photo">
-                <img v-bind:src="'/' + product.img" alt="">
+                <img v-bind:src="`/${product.img}`" alt="">
             </div>
             <div class="iteminfo">
                 <div class="name">產品: @{{product.name}}</div>
